@@ -56,7 +56,7 @@ Output is written to `dump.bin` (raw binary, 32 MB).
 Edit `dump_flash.tcl` and change the `size` variable:
 
 ```tcl
-set size   0x2000000    ;# 32 MB — adjust to match your flash
+set size   0x2000000    ;# 32 MB - adjust to match your flash
 ```
 
 ### Adjusting JTAG speed
@@ -64,7 +64,7 @@ set size   0x2000000    ;# 32 MB — adjust to match your flash
 Edit `zynq_jlink.conf`:
 
 ```
-adapter speed 1000    ;# kHz — lower is more stable over long cables
+adapter speed 1000    ;# kHz - lower is more stable over long cables
 ```
 
 ---
@@ -83,8 +83,8 @@ adapter speed 1000    ;# kHz — lower is more stable over long cables
 ## Notes
 
 - The script forces `LQSPI_CFG = 0x80000003` (linear mode + `0x03` standard SPI read).
-  If the board originally used Quad Read (`0x6B`), this is intentional — `0x03` avoids
+  If the board originally used Quad Read (`0x6B`), this is intentional - `0x03` avoids
   dummy-cycle and quad-mode initialization requirements and works on all SPI flash chips.
 - The dump uses little-endian 32-bit word ordering as returned by the AHB-AP.
-  Use `binwalk` or `strings` to verify content after dumping.
+  Use [exbootimage](https://github.com/antmicro/zynq-mkbootimage) to verify content after dumping.
 - Both CPUs are halted during the dump. `resume` is called automatically at the end.
