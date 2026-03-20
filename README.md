@@ -1,7 +1,7 @@
 # zynq-qspi-dump
 
 OpenOCD scripts to dump SPI flash from Xilinx Zynq-7000 devices via JTAG,
-using the ARM AHB-AP (MEM-AP) for direct bus reads — no custom FPGA bitstream required.
+using the ARM AHB-AP (MEM-AP) for direct bus reads. No custom FPGA bitstream required.
 
 Tested on **XC7Z015** with a **J-Link** probe and OpenOCD 0.12.
 
